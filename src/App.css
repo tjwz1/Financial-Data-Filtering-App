@@ -1,38 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .App {
   text-align: center;
+  font-weight: bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.data-container
+{
+  padding: 2rem;
+  background-color: #f8f9fa;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title
+{
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.data-table
+{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.App-link {
-  color: #61dafb;
+.data-table th
+{
+  padding: 1rem;
+  text-align: left;
+  background-color: #f1f1f1;
+  font-weight: 600;
+  border: 1px solid #ddd;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.data-table td
+{
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+.data-table tr:hover
+{
+  background-color: #f9f9f9;
+}
+.loading,
+.error
+{
+  text-align: center;
+  font-size: 1.5rem;
+  color: #333;
+}
+.error
+{
+  color: #ff6b6b;
 }
