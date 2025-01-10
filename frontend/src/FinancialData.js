@@ -73,17 +73,17 @@ function FinancialData() {
   }
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="p-6 min-h-screen border border-gray-200">
       <h1 className="text-3xl font-bold text-gray-800 text-center mb-8">
         Annual Financial Data for Apple
       </h1>
 
       <div className="mb-6">
-        <label htmlFor="filterBy" className="mr-2">Filter By:</label>
+        <label htmlFor="filterBy" className="mr-2 border border-gray-400">Filter By:</label>
         <select
           id="filterBy"
           name="filterBy"
-          className="mr-4"
+          className="mr-4 border border-gray-400"
           value={filterBy}
           onChange={handleFilterChange}
         >
@@ -96,7 +96,7 @@ function FinancialData() {
         <input
           type="number"
           name="filterValueMin"
-          className="mr-4"
+          className="mr-4 border border-gray-400"
           placeholder="Min Value"
           value={filterValueMin}
           onChange={handleFilterChange}
@@ -105,18 +105,14 @@ function FinancialData() {
         <input
           type="number"
           name="filterValueMax"
-          className="mr-4"
+          className="mr-4 border border-gray-400"
           placeholder="Max Value"
           value={filterValueMax}
           onChange={handleFilterChange}
         />
       </div>
 
-      <div className="mb-4 text-gray-700">
-        Currently sorting by: <strong>{sortBy}</strong> ({order === "asc" ? "Ascending" : "Descending"})
-      </div>
-
-      <table className="table-auto w-full border border-gray-200 shadow-lg">
+      <table className="table-auto w-full border shadow-lg">
         <thead className="bg-gray-100">
           <tr>
             {["date", "revenue", "netIncome", "grossProfit", "eps", "operatingIncome"].map((column) => (
@@ -127,8 +123,10 @@ function FinancialData() {
                   sortBy === column ? "bg-blue-200 font-bold" : ""
                 }`}
               >
-                {column.charAt(0).toUpperCase() + column.slice(1)}{" "}
-                {sortBy === column && (order === "asc" ? "⭡" : "⭣")}
+                <span>{column.charAt(0).toUpperCase() + column.slice(1)}</span>
+                {sortBy === column && (
+                  <span className="ml-2">{order === "asc" ? "⭡" : "⭣"}</span>
+                )}
               </th>
             ))}
           </tr>
