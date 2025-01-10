@@ -17,7 +17,7 @@ function FinancialData() {
     const fetchData = async () => {
       try {
         let url = `http://localhost:5000/api/data?sort_by=${sortBy}&order=${order}`;
-        
+
         if (filterBy) {
           url += `&filter_by=${filterBy}`;
         }
@@ -33,7 +33,6 @@ function FinancialData() {
 
         const result = await response.json();
 
-        // Ensure result is an array before using it
         if (Array.isArray(result)) {
           setData(result);
         } else {
@@ -113,45 +112,25 @@ function FinancialData() {
         />
       </div>
 
+      <div className="mb-4 text-gray-700">
+        Currently sorting by: <strong>{sortBy}</strong> ({order === "asc" ? "Ascending" : "Descending"})
+      </div>
+
       <table className="table-auto w-full border border-gray-200 shadow-lg">
         <thead className="bg-gray-100">
           <tr>
-            <th
-              onClick={() => handleSort("date")}
-              className="px-4 py-2 border border-gray-700"
-            >
-              Date
-            </th>
-            <th
-              onClick={() => handleSort("revenue")}
-              className="px-4 py-2 border border-gray-700"
-            >
-              Revenue
-            </th>
-            <th
-              onClick={() => handleSort("netIncome")}
-              className="px-4 py-2 border border-gray-700"
-            >
-              Net Income
-            </th>
-            <th
-              onClick={() => handleSort("grossProfit")}
-              className="px-4 py-2 border border-gray-700"
-            >
-              Gross Profit
-            </th>
-            <th
-              onClick={() => handleSort("eps")}
-              className="px-4 py-2 border border-gray-700"
-            >
-              EPS (Earnings Per Share)
-            </th>
-            <th
-              onClick={() => handleSort("operatingIncome")}
-              className="px-4 py-2 border border-gray-700"
-            >
-              Operating Income
-            </th>
+            {["date", "revenue", "netIncome", "grossProfit", "eps", "operatingIncome"].map((column) => (
+              <th
+                key={column}
+                onClick={() => handleSort(column)}
+                className={`px-4 py-2 border border-gray-700 cursor-pointer ${
+                  sortBy === column ? "bg-blue-200 font-bold" : ""
+                }`}
+              >
+                {column.charAt(0).toUpperCase() + column.slice(1)}{" "}
+                {sortBy === column && (order === "asc" ? "⭡" : "⭣")}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
