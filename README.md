@@ -1,70 +1,73 @@
-# Running the Project Locally
+Financial Filtering App
+A full-stack financial filtering app built with React for the frontend and Flask for the backend.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Prerequisites
+Node.js (v20.18.0 or higher)
+npm (v11.0.0 or higher)
+Python (3.8 or higher)
+pip (Python package installer)
+Running the Project Locally
+Step 1: Clone the Repository
+bash
+Copy code
+git clone https://github.com/yourusername/financial-filtering-app.git
+cd financial-filtering-app
+Step 2: Setup the Backend
+Navigate to the backend folder:
 
-## Available Scripts
+Copy code
+cd backend
+Create and activate a Python virtual environment (optional but recommended):
 
-In the project directory, you can run:
+Copy code
+python -m venv venv
+source venv/bin/activate  # On macOS/Linux
+venv\Scripts\activate     # On Windows
+Install backend dependencies:
 
-### `npm start`
+bash
+Copy code
+pip install -r requirements.txt
+Start the Flask development server:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+bash
+Copy code
+flask run
+By default, the backend will be available at http://127.0.0.1:5000.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Step 3: Setup the Frontend
+Navigate to the frontend folder:
 
-### `npm test`
+Copy code
+cd ../frontend
+Install frontend dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Copy code
+npm install
+Start the React development server:
 
-### `npm run build`
+bash
+Copy code
+npm start
+By default, the frontend will be available at http://localhost:3000.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Step 4: Access the Application
+Open your browser and visit http://localhost:3000. The frontend should connect to the backend API running at http://127.0.0.1:5000.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Folder Structure
+css
+Copy code
+financial-filtering-app/
+├── backend/
+│   ├── app.py
+│   ├── requirements.txt
+│   └── ...
+├── frontend/
+│   ├── package.json
+│   ├── src/
+│   └── ...
+└── README.md
+Notes
+Ensure both the backend and frontend servers are running simultaneously.
+Update the backend URL in the frontend if necessary (e.g., during deployment).
+Let me know if you'd like to include deployment instructions or additional details!
