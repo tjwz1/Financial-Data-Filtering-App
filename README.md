@@ -62,7 +62,3 @@ financial-filtering-app/
 │   ├── src/
 │   └── ...
 └── README.md
-## Notes
-Ensure both the backend and frontend servers are running simultaneously.
-Update the backend URL in the frontend if necessary (e.g., during deployment).
-Let me know if you'd like to include deployment instructions or additional details!
